@@ -1157,3 +1157,23 @@ html {
   }
 }
 
+
+/* Cards con altura uniforme */
+.row.g-4 > [class*="col-"] {
+  display: flex;
+}
+
+.row.g-4 .project-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 280px;
+}
+
+.row.g-4 .project-card p {
+  flex-grow: 1;
+}
+
+.row.g-4 .project-card .mt-3:last-child {
+  margin-top: auto !important;
+}
