@@ -1,597 +1,486 @@
 <!DOCTYPE html>
-<html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Carlos Andres Monterrosa Gallego - Desarrollador Full Stack</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-      rel="stylesheet"
-    />
-    <link href="styles.css" rel="stylesheet" />
-  </head>
-  <body>
-    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
-      <div class="container-lg">
-        <a class="navbar-brand" href="#hero">
-          <i class="fas fa-code"></i> MONTERROSA
+<html lang="es" class="dark-theme">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Carlos Monterrosa | Premium Software Engineer</title>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <!-- Bootstrap Grid System (Only Grid) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap-grid.min.css" />
+
+  <!-- Premium Styles -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+  <!-- Animated Ambient Orbs -->
+  <div class="ambient-bg">
+    <div class="ambient-orb orb-1"></div>
+    <div class="ambient-orb orb-2"></div>
+    <div class="ambient-orb orb-3"></div>
+  </div>
+
+  <!-- Premium Navigation -->
+  <nav class="premium-nav" id="navbar">
+    <div class="container d-flex justify-content-between align-items-center">
+      <a class="navbar-brand" href="#hero">
+        <i class="fas fa-terminal"></i> MONTERROSA <span class="mono-text text-muted"
+          style="font-size: 0.5em; letter-spacing:0px;">V3.0</span>
+      </a>
+      <div class="d-none d-md-flex gap-2">
+        <a class="nav-link" href="#about">About</a>
+        <a class="nav-link" href="#projects">Work</a>
+        <a class="nav-link" href="#expertise">Expertise</a>
+        <a class="nav-link" href="#contact">Connect</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="hero" class="hero-wrapper">
+    <div class="container hero-box">
+
+      <div class="status-badge">
+        <div class="ping"></div> Disponible para nuevos retos
+      </div>
+
+      <h1 class="hero-title">
+        Desarrollador <br>
+        <span class="text-gradient-primary"
+          style="text-shadow: 0 0 40px rgba(6, 182, 212, 0.6), 0 0 10px rgba(139, 92, 246, 0.4); font-weight: 900; letter-spacing: 1px; display: inline-block; transform: perspective(500px) translateZ(10px);">Full
+          Stack</span>
+      </h1>
+
+      <p class="hero-description">
+        Desarrollador Full Stack con enfoque en la excelencia. Transformando lógica compleja en ecosistemas escalables e
+        interfaces que cautivan. Especialización: Python, Data & Interfaces fluidas.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#projects" class="btn-premium">
+          Explorar Proyectos <i class="fas fa-arrow-right"></i>
         </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item"><a class="nav-link" href="#about">Acerca | About</a></li>
-            <li class="nav-item"><a class="nav-link" href="#projects">Proyectos | Projects</a></li>
-            <li class="nav-item"><a class="nav-link" href="#skills">Habilidades | Skills</a></li>
-            <li class="nav-item"><a class="nav-link" href="mascotas.html">Mascotas | Pets</a></li>
-            <li class="nav-item"><a class="nav-link" href="#contact">Contacto | Contact</a></li>
-          </ul>
-        </div>
+        <a href="https://github.com/monterrosag18" target="_blank" class="btn-ghost">
+          <i class="fab fa-github"></i> Ver Código
+        </a>
       </div>
-    </nav>
+    </div>
+  </section>
 
-    <section id="hero" class="hero-section">
-      <div class="container-lg hero-content">
-        <h1>Carlos Andres Monterrosa</h1>
-        <p class="hero-subtitle">Desarrollador Full Stack | Full Stack Developer</p>
-        <p class="hero-desc">
-          Especializado en Python, CRUD, algoritmos y desarrollo backend.
-          Transformo ideas en soluciones escalables con Código limpio y eficiente.
-          <br />
-          <em class="text-white-50 small">Specialized in Python, CRUD, algorithms and backend development. I transform ideas into scalable solutions.</em>
-        </p>
-        <div class="d-flex gap-2 justify-content-center flex-wrap">
-          <a href="#projects" class="btn btn-primary">
-            <i class="fas fa-rocket"></i> Ver Proyectos | View Work
-          </a>
-          <a href="https://github.com/monterrosag18" target="_blank" class="btn btn-outline-light">
-            <i class="fab fa-github"></i> GitHub
-          </a>
-        </div>
+  <!-- About Section -->
+  <section id="about" class="py-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">// System.Identity</span>
+        <h2 class="section-title-main">El Core de mi Trabajo</h2>
       </div>
-    </section>
 
-    <section id="about" class="about-section">
-      <div class="container-lg">
-        <h2 class="section-title">Quién Soy | Who I Am</h2>
-        <div class="row g-4 d-flex align-items-stretch">
-          <div class="col-md-4">
-            <div class="project-card h-100">
-              <h3><i class="fas fa-graduation-cap"></i> Aprendizaje</h3>
-              <p>Desarrollador en formación Riwi, dedicado a dominar La Lógica. Cada proyecto es una oportunidad para crecer.</p>
-            </div>
+      <div class="row g-4 align-items-stretch about-cards-wrapper">
+        <div class="col-lg-4 col-md-6">
+          <div class="glass-card tilt-card">
+            <div class="icon-box"><i class="fas fa-brain"></i></div>
+            <h3>Agilidad Mental</h3>
+            <p>Dedicación obsesiva por dominar la lógica detrás del código. Resuelvo problemas estructurales pensando
+              siempre tres pasos adelante en la escalabilidad.</p>
           </div>
-          <div class="col-md-4">
-            <div class="project-card h-100">
-              <h3><i class="fas fa-code"></i> Código Limpio</h3>
-              <p>Creo que la calidad importa. Cada línea de Código que escribo es intencional, bien estructurada y pensada para el futuro.</p>
-            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+          <div class="glass-card tilt-card">
+            <div class="icon-box"><i class="fas fa-code-branch"></i></div>
+            <h3>Clean Architecture</h3>
+            <p>La calidad no es opcional. Escribo código modular, testeable e intencional, priorizando el mantenimiento
+              a largo plazo y la eficiencia O(1).</p>
           </div>
-          <div class="col-md-4">
-            <div class="project-card h-100">
-              <h3><i class="fas fa-fire"></i> Pasión</h3>
-              <p>Resuelvo problemas complejos con soluciones elegantes. Soy apasionado por la lógica, los algoritmos y crear Código que realmente impacta.</p>
-            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-12">
+          <div class="glass-card tilt-card">
+            <div class="icon-box"><i class="fas fa-gem"></i></div>
+            <h3>Detalle Obsesivo</h3>
+            <p>Convencido de que un backend sólido merece una interfaz magistral. Combino el rigor de los datos con el
+              impacto estético del Glassmorphism.</p>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="projects" class="bg-dark">
-      <div class="container-lg">
-        <h2 class="section-title">Proyectos | Projects</h2>
+  <!-- Projects Hub -->
+  <section id="projects" class="py-section" style="position: relative; z-index:2;">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">// Portfolio.Execute()</span>
+        <h2 class="section-title-main">Arsenal Tecnológico</h2>
+      </div>
 
-        <div class="row mb-5">
-          <div class="col-12">
-            <h3 class="text-center mb-4" style="color: #f0db4f; font-size: 1.8rem;">
-              <i class="fab fa-js-square"></i> JavaScript
-            </h3>
-          </div>
-        </div>
-
-        <div class="row g-4 d-flex align-items-stretch">
-          <div class="col-lg-3 col-md-6">
-            <div class="project-card h-100">
-              <h3><i class="fas fa-check-circle"></i> HabitFlow</h3>
-              <p>Sistema de seguimiento de habitos con CRUD completo, filtros y metricas.</p>
-              <div>
-                <span class="tech-badge">JavaScript</span>
-                <span class="tech-badge">LocalStorage</span>
-                <span class="tech-badge">Modules</span>
-              </div>
-              <div class="mt-3 card-actions">
-                <a href="https://monterrosag18.github.io/HabitFlow" target="_blank" class="btn btn-primary btn-sm me-2"><i class="fas fa-external-link-alt"></i> Demo</a>
-                <a href="https://github.com/monterrosag18/HabitFlow.git" target="_blank" class="btn btn-outline-light btn-sm"><i class="fab fa-github"></i> Ver</a>
+      <!-- SQL & NoSQL -->
+      <h3 class="project-category-title cat-sql">
+        <i class="fas fa-database"></i> Data & Infraestructura (SQL/NoSQL)
+      </h3>
+      <div class="row g-4 projects-grid mb-5">
+        <div class="col-lg-6">
+          <div class="glass-card project-item tilt-card">
+            <div class="d-flex justify-content-between align-items-start mb-3">
+              <div class="icon-box"
+                style="color: #00adb5; border-color: rgba(0,173,181,0.3); background: rgba(0,173,181,0.1);"><i
+                  class="fas fa-server"></i></div>
+            </div>
+            <h3 class="mb-2">Delivery Ops (SQL)</h3>
+            <div class="project-desc">
+              <p>Diseño y construcción de un modelo relacional en PostgreSQL para logística de operaciones. Gobernanza
+                de datos con integridad referencial, vistas materializadas y queries analíticas complejas.</p>
+              <div class="tech-stack">
+                <span class="tech-tag">PostgreSQL</span> <span class="tech-tag">DER Architecture</span> <span
+                  class="tech-tag">Analytics</span>
               </div>
             </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <div class="project-card h-100">
-              <h3><i class="fas fa-lightbulb"></i> IdeaHub (Riwi)</h3>
-              <p>Plataforma colaborativa para gestión de ideas. Mi aporte: funcionalidades y lógica JS.</p>
-              <div>
-                <span class="tech-badge">JavaScript</span>
-                <span class="tech-badge">HTML5</span>
-                <span class="tech-badge">CSS3</span>
-              </div>
-              <div class="mt-3 card-actions">
-                <a href="https://github.com/SAOT31/IdeaHub/tree/feature/ideas-crud" target="_blank" class="btn btn-outline-light btn-sm"><i class="fab fa-github"></i> Feature Branch</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <div class="project-card h-100">
-              <h3><i class="fas fa-users"></i> Turing & McCarthy</h3>
-              <p>Trabajo colaborativo entre clanes. Mi aporte: index (landing page) en la rama monterrosa.</p>
-              <div>
-                <span class="tech-badge">JavaScript</span>
-                <span class="tech-badge">Trabajo en equipo</span>
-              </div>
-              <div class="mt-3 card-actions">
-                <a href="https://github.com/JjuanGarcia77/trabajo-entre-dos-equipos/tree/monterrosa" target="_blank" class="btn btn-outline-light btn-sm"><i class="fab fa-github"></i> Rama Monterrosa</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <div class="project-card h-100">
-              <h3><i class="fas fa-users"></i> WorkFlow</h3>
-              <p>Gestión de flujo de trabajo. Aplicación interactiva grupal.</p>
-              <div>
-                <span class="tech-badge">JavaScript</span>
-                <span class="tech-badge">HTML5</span>
-              </div>
-              <div class="mt-3 card-actions">
-                <a href="https://github.com/UlithG18/WorkFlow.git" target="_blank" class="btn btn-primary btn-sm"><i class="fab fa-github"></i> Ver</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <div class="project-card h-100">
-              <h3><i class="fas fa-drumstick-bite"></i> KFC Replica</h3>
-              <p>Proyecto web de KFC hecha con Bootstrap y JavaScript.</p>
-              <div>
-                <span class="tech-badge">JavaScript</span>
-                <span class="tech-badge">Bootstrap</span>
-              </div>
-              <div class="mt-3 card-actions">
-                <a href="https://github.com/monterrosag18/kfc.git" target="_blank" class="btn btn-primary btn-sm"><i class="fab fa-github"></i> Ver</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <div class="project-card h-100">
-              <h3><i class="fas fa-code"></i> Ejercicio 1 JS</h3>
-              <p>Práctica de manipulación del DOM y eventos.</p>
-              <div>
-                <span class="tech-badge">JavaScript</span>
-                <span class="tech-badge">DOM</span>
-              </div>
-              <div class="mt-3 card-actions">
-                <a href="https://github.com/monterrosag18/ejercicio1javascript.git" target="_blank" class="btn btn-primary btn-sm"><i class="fab fa-github"></i> Ver</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <div class="project-card h-100">
-              <h3><i class="fas fa-laptop-code"></i> Ejercicio 2 JS</h3>
-              <p>Práctica de Arrays y Funciones en JavaScript.</p>
-              <div>
-                <span class="tech-badge">JavaScript</span>
-                <span class="tech-badge">Arrays</span>
-              </div>
-              <div class="mt-3 card-actions">
-                <a href="https://github.com/monterrosag18/ejercicio2javascript.git" target="_blank" class="btn btn-primary btn-sm"><i class="fab fa-github"></i> Ver</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <div class="project-card h-100">
-              <h3><i class="fas fa-clipboard-check"></i> Check-in System</h3>
-              <p>Sistema de check-in con lógica de validación.</p>
-              <div>
-                <span class="tech-badge">JavaScript</span>
-                <span class="tech-badge">Validaciones</span>
-              </div>
-              <div class="mt-3 card-actions">
-                <a href="https://github.com/monterrosag18/actividadJavascript.git" target="_blank" class="btn btn-primary btn-sm"><i class="fab fa-github"></i> Ver</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <div class="project-card h-100">
-              <h3><i class="fas fa-play-circle"></i> Crunchyroll Replica</h3>
-              <p>App con auth, perfiles, catálogo y favoritos. LocalStorage y protección de rutas.</p>
-              <div>
-                <span class="tech-badge">JavaScript</span>
-                <span class="tech-badge">LocalStorage</span>
-              </div>
-              <div class="mt-3 card-actions">
-                <a href="https://github.com/monterrosag18/crunchyroll.git" target="_blank" class="btn btn-primary btn-sm"><i class="fab fa-github"></i> Ver</a>
-              </div>
+            <div class="project-links">
+              <a href="https://github.com/monterrosag18/crudactivity-sql-cdo.git" target="_blank"
+                class="btn-icon primary"><i class="fab fa-github"></i> Source Code</a>
             </div>
           </div>
         </div>
 
-        <div class="row mt-5">
-          <div class="col-12">
-            <h3 class="text-center mb-4" style="color: var(--secondary); font-size: 1.8rem;">
-              <i class="fas fa-code"></i> HTML & CSS
-            </h3>
-          </div>
-        </div>
-
-        <div class="row g-4 d-flex align-items-stretch">
-          <div class="col-lg-6">
-            <div class="project-card h-100">
-              <h3><i class="fas fa-globe"></i> CrudScope</h3>
-              <p>Sitio web responsivo con diseño sencillo HTML5 y CSS3.</p>
-              <div>
-                <span class="tech-badge">HTML5</span>
-                <span class="tech-badge">CSS3</span>
-                <span class="tech-badge">Bootstrap</span>
-              </div>
-              <div class="mt-3 card-actions">
-                <a href="https://monterrosag18.github.io/html-crud/" target="_blank" class="btn btn-primary btn-sm me-2"><i class="fas fa-external-link-alt"></i> Visitar</a>
-                <a href="https://github.com/monterrosag18/html-crud.git" target="_blank" class="btn btn-outline-light btn-sm"><i class="fab fa-github"></i> Código</a>
+        <div class="col-lg-6">
+          <div class="glass-card project-item tilt-card">
+            <div class="d-flex justify-content-between align-items-start mb-3">
+              <div class="icon-box"
+                style="color: #4CAF50; border-color: rgba(76,175,80,0.3); background: rgba(76,175,80,0.1);"><i
+                  class="fas fa-leaf"></i></div>
+            </div>
+            <h3 class="mb-2">Delivery Ops (NoSQL)</h3>
+            <div class="project-desc">
+              <p>Migración y rediseño del modelo hacia bases documentales en MongoDB. Implementación de patrones de
+                embedding estratégico vs references, agregaciones de alto rendimiento e indexación.</p>
+              <div class="tech-stack">
+                <span class="tech-tag">MongoDB</span> <span class="tech-tag">Aggregation Pipeline</span> <span
+                  class="tech-tag">BSON</span>
               </div>
             </div>
-          </div>
-
-          <div class="col-lg-6">
-            <div class="project-card h-100">
-              <h3><i class="fas fa-paint-brush"></i> Windows Vista Clone</h3>
-              <p>Trabajo en equipo, mi aporte principal fue el index y maquetado.</p>
-              <div>
-                <span class="tech-badge">CSS Grid</span>
-                <span class="tech-badge">Flexbox</span>
-              </div>
-              <div class="mt-3 card-actions">
-                <a href="https://archilag.github.io/mini-os/" target="_blank" class="btn btn-primary btn-sm me-2"><i class="fas fa-external-link-alt"></i> Visitar</a>
-                <a href="https://github.com/archilag/mini-os" target="_blank" class="btn btn-outline-light btn-sm"><i class="fab fa-github"></i> Código</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-6">
-            <div class="project-card h-100">
-              <h3><i class="fas fa-gem"></i> Dioses de Egipto</h3>
-              <p>Proyecto grupal. Sección de <strong>Anubis</strong> (estructura, estilos y contenido). HTML y CSS puro.</p>
-              <div>
-                <span class="tech-badge">HTML5</span>
-                <span class="tech-badge">CSS3</span>
-              </div>
-              <div class="mt-3 card-actions">
-                <a href="https://monterrosag18.github.io/html_dioses/" target="_blank" class="btn btn-primary btn-sm me-2"><i class="fas fa-external-link-alt"></i> Visitar</a>
-                <a href="https://github.com/monterrosag18/html_dioses" target="_blank" class="btn btn-outline-light btn-sm"><i class="fab fa-github"></i> Código</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-6">
-            <div class="project-card h-100">
-              <h3><i class="fas fa-store"></i> Tienda Riwi</h3>
-              <p>Tienda virtual con carrito, catálogo y diseño responsivo. Solo HTML y CSS.</p>
-              <div>
-                <span class="tech-badge">HTML5</span>
-                <span class="tech-badge">Responsive</span>
-              </div>
-              <div class="mt-3 card-actions">
-                <a href="https://monterrosag18.github.io/tiendariwi/" target="_blank" class="btn btn-primary btn-sm me-2"><i class="fas fa-external-link-alt"></i> Visitar</a>
-                <a href="https://github.com/monterrosag18/tiendariwi.git" target="_blank" class="btn btn-outline-light btn-sm"><i class="fab fa-github"></i> Código</a>
-              </div>
-            </div>
-          </div>
-
-           <div class="col-12">
-            <div class="project-card h-100" style="background: rgba(217, 119, 6, 0.05); border-color: rgba(217, 119, 6, 0.3);">
-              <h3><i class="fas fa-briefcase"></i> Este Portafolio + Galería Mascotas</h3>
-              <p>
-                Aplicando HTML5 semántico, CSS3 avanzado (Grid/Flexbox), diseño responsivo y JavaScript. 
-                Incluye página secundaria de galería de mascotas con efectos. Código optimizado.
-              </p>
-              <div>
-                <span class="tech-badge">HTML5</span>
-                <span class="tech-badge">CSS Variables</span>
-                <span class="tech-badge">JavaScript</span>
-              </div>
-              <div class="mt-3 card-actions">
-                <a href="mascotas.html" class="btn btn-primary btn-sm me-2"><i class="fas fa-paw"></i> Ver Galería Mascotas</a>
-                <a href="https://github.com/monterrosag18/portafolio.git" target="_blank" class="btn btn-outline-light btn-sm"><i class="fab fa-github"></i> Código</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="row mt-5">
-          <div class="col-12">
-            <h3 class="text-center mb-4" style="color: var(--accent); font-size: 1.8rem;">
-              <i class="fab fa-python"></i> Python
-            </h3>
-          </div>
-        </div>
-
-        <div class="row g-4 d-flex align-items-stretch">
-          <div class="col-lg-4 col-md-6">
-            <div class="project-card h-100">
-              <h3><i class="fas fa-database"></i> CRUD Básico</h3>
-              <p>Operaciones Create, Read, Update, Delete. Gestión de datos y persistencia.</p>
-              <div>
-                <span class="tech-badge">Python</span>
-                <span class="tech-badge">Database</span>
-              </div>
-              <div class="mt-3 card-actions">
-                <a href="https://github.com/monterrosag18/crud_activity.git" target="_blank" class="btn btn-primary btn-sm"><i class="fab fa-github"></i> Ver</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6">
-            <div class="project-card h-100">
-              <h3><i class="fas fa-code"></i> 10 Ejercicios</h3>
-              <p>Variables, bucles, funciones y estructuras de datos.</p>
-              <div>
-                <span class="tech-badge">Python</span>
-                <span class="tech-badge">Lógica</span>
-              </div>
-              <div class="mt-3 card-actions">
-                <a href="https://github.com/monterrosag18/EjerciciosPython10.git" target="_blank" class="btn btn-primary btn-sm"><i class="fab fa-github"></i> Ver</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6">
-            <div class="project-card h-100">
-              <h3><i class="fas fa-gamepad"></i> Game Azogo</h3>
-              <p>Juego con integración de CRUD y mecánicas interactivas.</p>
-              <div>
-                <span class="tech-badge">Python</span>
-                <span class="tech-badge">OOP</span>
-              </div>
-              <div class="mt-3 card-actions">
-                <a href="https://github.com/monterrosag18/crudazogame.git" target="_blank" class="btn btn-primary btn-sm"><i class="fab fa-github"></i> Ver</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6">
-            <div class="project-card h-100">
-              <h3><i class="fas fa-users"></i> User Stories</h3>
-              <p>Sistema de Gestión de historias de usuario. Metodología Ágil.</p>
-              <div>
-                <span class="tech-badge">Python</span>
-                <span class="tech-badge">Agile</span>
-              </div>
-              <div class="mt-3 card-actions">
-                <a href="https://github.com/monterrosag18/Historias_las_tres.git" target="_blank" class="btn btn-primary btn-sm"><i class="fab fa-github"></i> Ver</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6">
-            <div class="project-card h-100">
-              <h3><i class="fas fa-bicycle"></i> Alquiler System</h3>
-              <p>Plataforma de alquiler de bicicletas. OOP y lógica de negocio.</p>
-              <div>
-                <span class="tech-badge">Python</span>
-                <span class="tech-badge">OOP</span>
-              </div>
-              <div class="mt-3 card-actions">
-                <a href="https://github.com/monterrosag18/alquilerRiwi/blob/main/alquiler.py" target="_blank" class="btn btn-primary btn-sm"><i class="fab fa-github"></i> Ver</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6">
-            <div class="project-card h-100">
-              <h3><i class="fas fa-repeat"></i> Loops & Flow</h3>
-              <p>Investigación profunda de bucles y control de flujo avanzado.</p>
-              <div>
-                <span class="tech-badge">Python</span>
-                <span class="tech-badge">Algoritmos</span>
-              </div>
-              <div class="mt-3 card-actions">
-                <a href="https://github.com/monterrosag18/actividad_2individual.git" target="_blank" class="btn btn-primary btn-sm"><i class="fab fa-github"></i> Ver</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="row mt-5">
-          <div class="col-12">
-            <h3 class="text-center mb-4" style="color: #00758F; font-size: 1.8rem;">
-              <i class="fas fa-database"></i> SQL & NoSQL
-            </h3>
-          </div>
-        </div>
-
-        <div class="row g-4 d-flex align-items-stretch">
-          <div class="col-lg-6">
-            <div class="project-card h-100">
-              <h3><i class="fas fa-server"></i> Delivery Ops (SQL)</h3>
-              <p>Diseño y construcción de un modelo relacional (PostgreSQL) para un módulo de operaciones de entregas. Incluye DER, DDL, DML y consultas avanzadas.</p>
-              <div>
-                <span class="tech-badge">PostgreSQL</span>
-                <span class="tech-badge">SQL</span>
-                <span class="tech-badge">DER</span>
-              </div>
-              <div class="mt-3 card-actions">
-                <a href="https://github.com/monterrosag18/crudactivity-sql-cdo.git" target="_blank" class="btn btn-primary btn-sm"><i class="fab fa-github"></i> Ver Código</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-6">
-            <div class="project-card h-100">
-              <h3><i class="fas fa-leaf"></i> Delivery Ops (NoSQL)</h3>
-              <p>Modelo orientado a documentos en MongoDB para el módulo de operaciones. Decisiones de embedding, scripts JS para Setup y agregaciones.</p>
-              <div>
-                <span class="tech-badge">MongoDB</span>
-                <span class="tech-badge">NoSQL</span>
-                <span class="tech-badge">JSON</span>
-              </div>
-              <div class="mt-3 card-actions">
-                <a href="https://github.com/monterrosag18/crudactivity-nosql-cdo.git" target="_blank" class="btn btn-primary btn-sm"><i class="fab fa-github"></i> Ver Código</a>
-              </div>
+            <div class="project-links">
+              <a href="https://github.com/monterrosag18/crudactivity-nosql-cdo.git" target="_blank"
+                class="btn-icon primary"><i class="fab fa-github"></i> Source Code</a>
             </div>
           </div>
         </div>
       </div>
-    </section>
 
-    <section id="skills" class="skills-section">
-      <div class="container-lg">
-        <h2 class="section-title">Habilidades Técnicas | Technical Skills</h2>
-        <div class="row g-4 justify-content-center d-flex align-items-stretch">
-          <div class="col-md-6 col-lg-4">
-            <div class="skill-card h-100">
-              <i class="fab fa-js-square"></i>
-              <h4>JavaScript</h4>
-              <p>DOM, eventos, funciones y manipulación de datos.</p>
+      <!-- JavaScript Section -->
+      <h3 class="project-category-title cat-js">
+        <i class="fab fa-js-square"></i> Core Lógico (JavaScript)
+      </h3>
+      <div class="row g-4 projects-grid mb-5">
+
+        <div class="col-lg-4 col-md-6">
+          <div class="glass-card project-item tilt-card">
+            <h3 class="mb-2">HabitFlow OS</h3>
+            <div class="project-desc">
+              <p>Ecosistema de seguimiento de hábitos con CRUD completo, persistencia en Storage y dashboards analíticos
+                reactivos.</p>
+              <div class="tech-stack">
+                <span class="tech-tag">ES6 Modules</span> <span class="tech-tag">DOM Manipulation</span>
+              </div>
+            </div>
+            <div class="project-links">
+              <a href="https://monterrosag18.github.io/HabitFlow" target="_blank" class="btn-icon primary"><i
+                  class="fas fa-bolt"></i> Live App</a>
+              <a href="https://github.com/monterrosag18/HabitFlow.git" target="_blank" class="btn-icon"><i
+                  class="fab fa-github"></i> Code</a>
             </div>
           </div>
-          <div class="col-md-6 col-lg-4">
-            <div class="skill-card h-100">
-              <i class="fab fa-html5"></i>
-              <h4>HTML5</h4>
-              <p>Semántica, accesibilidad y estructura moderna.</p>
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+          <div class="glass-card project-item tilt-card">
+            <h3 class="mb-2">IdeaHub (Riwi)</h3>
+            <div class="project-desc">
+              <p>Plataforma para gestión de ideas ágiles. Mi rol: Liderazgo en integración de funcionalidades JavaScript
+                pura y estados de componentes.</p>
+              <div class="tech-stack">
+                <span class="tech-tag">JS Stateful Logic</span> <span class="tech-tag">Team Collab</span>
+              </div>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/SAOT31/IdeaHub/tree/feature/ideas-crud" target="_blank" class="btn-icon"><i
+                  class="fab fa-github"></i> Feature Branch</a>
             </div>
           </div>
-          <div class="col-md-6 col-lg-4">
-            <div class="skill-card h-100">
-              <i class="fab fa-css3-alt"></i>
-              <h4>CSS3</h4>
-              <p>Animaciones, Grid, Flexbox y Responsive Design.</p>
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+          <div class="glass-card project-item tilt-card">
+            <h3 class="mb-2">Crunchyroll Replica</h3>
+            <div class="project-desc">
+              <p>SPA simulando streaming con guardias de enrutamiento (Auth), perfiles de usuario multiplexados y
+                catálogo persistente.</p>
+              <div class="tech-stack">
+                <span class="tech-tag">JS Routing</span> <span class="tech-tag">Auth State</span>
+              </div>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/monterrosag18/crunchyroll.git" target="_blank" class="btn-icon primary"><i
+                  class="fab fa-github"></i> Explore Repo</a>
             </div>
           </div>
-          <div class="col-md-6 col-lg-4">
-            <div class="skill-card h-100">
-              <i class="fab fa-python"></i>
-              <h4>Python</h4>
-              <p>Backend, OOP, estructuras de datos y algoritmos.</p>
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+          <div class="glass-card project-item tilt-card">
+            <h3 class="mb-2">KFC Replica UI</h3>
+            <div class="project-desc">
+              <p>Clon hiper-preciso de interacciones E-commerce. Manejo del DOM pesado mediante constructores dinámicos
+                y eventos de Bootstrap.</p>
+              <div class="tech-stack">
+                <span class="tech-tag">Dynamic DOM</span> <span class="tech-tag">Events</span>
+              </div>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/monterrosag18/kfc.git" target="_blank" class="btn-icon"><i
+                  class="fab fa-github"></i> Repository</a>
             </div>
           </div>
-          <div class="col-md-6 col-lg-4">
-            <div class="skill-card h-100">
-              <i class="fab fa-git-alt"></i>
-              <h4>Git & GitHub</h4>
-              <p>Control de versiones y desarrollo colaborativo.</p>
+        </div>
+
+        <div class="col-lg-8 col-md-12">
+          <div class="glass-card project-item tilt-card"
+            style="border-color: rgba(247, 223, 30, 0.4); box-shadow: 0 0 30px rgba(247, 223, 30, 0.05);">
+            <h3 class="mb-2">Sistemas de Check-in & Algoritmia Front</h3>
+            <div class="project-desc">
+              <p>Set exhaustivo de aplicaciones (Turing & McCarthy, Check-in modular, WorkFlow) que demuestran un
+                control absoluto sobre el motor V8, callbacks asíncronos, validación rigurosa de Inputs, y trabajo
+                profundo con Arrays multidimensionales.</p>
+              <div class="tech-stack">
+                <span class="tech-tag">Algoritmia JS</span> <span class="tech-tag">Validation Engines</span> <span
+                  class="tech-tag">Closures</span>
+              </div>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/monterrosag18/actividadJavascript.git" target="_blank" class="btn-icon"><i
+                  class="fab fa-github"></i> Check-In Source</a>
+              <a href="https://github.com/UlithG18/WorkFlow.git" target="_blank" class="btn-icon"><i
+                  class="fas fa-network-wired"></i> WorkFlow</a>
             </div>
           </div>
         </div>
       </div>
-    </section>
 
-    <section id="contact" class="bg-dark">
-      <div class="container-lg">
-        <h2 class="section-title">Conectemos | Let's Connect</h2>
-        <p class="text-center mb-5 text-muted">
-          ¿Tienes un proyecto en mente? ¿Quieres colaborar? Déjame un mensaje y te responderé lo antes posible.
-        </p>
+      <!-- HTML & CSS Section -->
+      <h3 class="project-category-title cat-html">
+        <i class="fab fa-html5"></i> Front-End Architecture (HTML/CSS)
+      </h3>
+      <div class="row g-4 projects-grid mb-5">
 
-        <div class="row g-4">
-          <div class="col-lg-5">
-            <div class="contact-info-card h-100">
-              <h3 style="color: var(--secondary); margin-bottom: 1.5rem; font-size: 1.5rem;">
-                Información
-              </h3>
+        <div class="col-lg-6">
+          <div class="glass-card project-item tilt-card"
+            style="background: rgba(14, 165, 233, 0.08); border-color: rgba(14, 165, 233, 0.3);">
+            <div class="d-flex justify-content-between align-items-start mb-3">
+              <div class="icon-box"
+                style="color: #0ea5e9; border-color: rgba(14,165,233,0.3); background: rgba(14,165,233,0.1);"><i
+                  class="fas fa-cube"></i></div>
+            </div>
+            <h3 class="mb-2 text-gradient-primary">Portafolio V3 / UI Masterpiece</h3>
+            <div class="project-desc">
+              <p>Míralo tú mismo. Un entorno visual inmersivo logrado <b>sin depender de frameworks pesados</b>. Uso
+                experto de Backdrop Filters, CSS scroll-behavior, Flexbox avanzado, micro-animaciones en hover y
+                arquitectura CSS Variables dinámicas.</p>
+              <div class="tech-stack">
+                <span class="tech-tag">Advanced Glassmorphism</span> <span class="tech-tag">CSS Custom Properties</span>
+                <span class="tech-tag">Perfect UI</span>
+              </div>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/monterrosag18/portafolio.git" target="_blank" class="btn-icon primary"><i
+                  class="fab fa-github"></i> Ver Hechizo (Repo)</a>
+              <a href="mascotas.html" class="btn-icon"><i class="fas fa-paw"></i> Secondary App: Pets Gallery</a>
+            </div>
+          </div>
+        </div>
 
-              <div class="contact-item">
-                <div class="contact-icon"><i class="fas fa-envelope"></i></div>
-                <div class="contact-details">
-                  <h4>Email</h4>
-                  <a href="mailto:monterrosamgcol@gmail.com">monterrosamgcol@gmail.com</a>
+        <div class="col-lg-6">
+          <div class="row g-4">
+            <div class="col-12">
+              <div class="glass-card project-item tilt-card" style="padding: 25px;">
+                <h3 class="mb-2" style="font-size: 1.25rem;">CrudScope & Tienda Riwi</h3>
+                <div class="project-desc">
+                  <p style="font-size: 0.95rem;">Aplicaciones de E-Commerce estáticas 100% responsivas, dominando CSS
+                    Grid y Flexbox al milímetro.</p>
+                </div>
+                <div class="project-links mt-3">
+                  <a href="https://monterrosag18.github.io/tiendariwi/" target="_blank" class="btn-icon primary"
+                    style="padding:8px;"><i class="fas fa-store"></i> Shop Live</a>
+                  <a href="https://github.com/monterrosag18/html-crud.git" target="_blank" class="btn-icon"
+                    style="padding:8px;"><i class="fab fa-github"></i> Crud Repo</a>
                 </div>
               </div>
-
-              <div class="contact-item">
-                <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
-                <div class="contact-details">
-                  <h4>Ubicación</h4>
-                  <p>Colombia</p>
-                </div>
-              </div>
-
-              <div class="social-links mt-4 text-center text-lg-start">
-                <a href="https://github.com/monterrosag18" target="_blank"><i class="fab fa-github fa-lg"></i></a>
-                <a href="mailto:monterrosamgcol@gmail.com"><i class="fas fa-envelope fa-lg"></i></a>
-                <a href="https://linkedin.com/in/carlos-monterrosa" target="_blank"><i class="fab fa-linkedin fa-lg"></i></a>
-              </div>
             </div>
-          </div>
-
-          <div class="col-lg-7">
-            <div class="contact-form-card h-100">
-              <form id="contactForm" class="contact-form">
-                <div class="row g-3">
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label for="name" class="form-label"><i class="fas fa-user"></i> Nombre</label>
-                      <input type="text" class="form-control" id="name" name="name" required placeholder="Tu nombre">
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label for="email" class="form-label"><i class="fas fa-envelope"></i> Email</label>
-                      <input type="email" class="form-control" id="email" name="email" required placeholder="tucorreo@ejemplo.com">
-                    </div>
-                  </div>
-                  <div class="col-12">
-                    <div class="form-group">
-                      <label for="subject" class="form-label"><i class="fas fa-tag"></i> Asunto</label>
-                      <select class="form-control" id="subject" name="subject" required>
-                        <option value="">Selecciona un asunto</option>
-                        <option value="proyecto">Propuesta de Proyecto</option>
-                        <option value="colaboracion">Colaboración</option>
-                        <option value="otro">Otro</option>
-                      </select>
-                    </div>
-                  </div>
-                  <div class="col-12">
-                    <div class="form-group">
-                      <label for="message" class="form-label"><i class="fas fa-comment-dots"></i> Mensaje</label>
-                      <textarea class="form-control" id="message" name="message" rows="5" required placeholder="Cuéntame sobre tu proyecto..."></textarea>
-                    </div>
-                  </div>
-                  <div class="col-12">
-                    <button type="submit" class="btn-submit">
-                      <span class="btn-text"><i class="fas fa-paper-plane"></i> Enviar Mensaje</span>
-                      <span class="btn-loading" style="display: none"><i class="fas fa-spinner fa-spin"></i> Enviando...</span>
-                    </button>
-                  </div>
+            <div class="col-12">
+              <div class="glass-card project-item tilt-card" style="padding: 25px;">
+                <h3 class="mb-2" style="font-size: 1.25rem;">Windows Vista Clone & Dioses</h3>
+                <div class="project-desc">
+                  <p style="font-size: 0.95rem;">Maquetación de sistemas de ventanas retro y animaciones de Landing
+                    Pages temáticas con CSS puro.</p>
                 </div>
-              </form>
-              <div id="formMessage" class="form-message" style="display: none"></div>
+                <div class="project-links mt-3">
+                  <a href="https://archilag.github.io/mini-os/" target="_blank" class="btn-icon" style="padding:8px;"><i
+                      class="fas fa-desktop"></i> OS Live</a>
+                  <a href="https://monterrosag18.github.io/html_dioses/" target="_blank" class="btn-icon"
+                    style="padding:8px;"><i class="fab fa-chrome"></i> Gods Landing</a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
 
-    <footer class="footer">
-      <div class="container-lg">
-        <p>&copy; 2025 Carlos Andres Monterrosa | Desarrollador Full Stack</p>
+      <!-- Python Section -->
+      <h3 class="project-category-title cat-py">
+        <i class="fab fa-python"></i> Ingeniería Backend (Python)
+      </h3>
+      <div class="row g-4 projects-grid">
+
+        <div class="col-lg-4 col-md-6">
+          <div class="glass-card project-item tilt-card">
+            <h3 class="mb-2">Alquiler Data System</h3>
+            <div class="project-desc">
+              <p>Sistema backend robusto para flotas. Construido con arquitectura <b>OOP Estricta</b> asegurando
+                encapsulamiento y polimorfismo puro.</p>
+              <div class="tech-stack">
+                <span class="tech-tag">OOP</span> <span class="tech-tag">Python Classes</span>
+              </div>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/monterrosag18/alquilerRiwi/blob/main/alquiler.py" target="_blank"
+                class="btn-icon primary"><i class="fas fa-file-code"></i> Arquitectura</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+          <div class="glass-card project-item tilt-card">
+            <h3 class="mb-2">Game Azogo CLI</h3>
+            <div class="project-desc">
+              <p>Motor de juego donde las mecánicas interactúan simbióticamente con una base de datos CRUD en memoria
+                durante el tiempo de ejecución.</p>
+              <div class="tech-stack">
+                <span class="tech-tag">CLI Apps</span> <span class="tech-tag">Game Logic</span>
+              </div>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/monterrosag18/crudazogame.git" target="_blank" class="btn-icon"><i
+                  class="fas fa-gamepad"></i> Game Repo</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-12">
+          <div class="glass-card project-item tilt-card">
+            <h3 class="mb-2">Lógica Computacional Core</h3>
+            <div class="project-desc">
+              <p>Desarrollo intensivo de algoritmos (10+ paquetes complejos). Manejo absoluto de Loops Dinámicos,
+                Recursión Básica y Control de Flujos.</p>
+              <div class="tech-stack">
+                <span class="tech-tag">Big O</span> <span class="tech-tag">Algorithm Design</span>
+              </div>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/monterrosag18/actividad_2individual.git" target="_blank" class="btn-icon"><i
+                  class="fab fa-github"></i> Set 1</a>
+              <a href="https://github.com/monterrosag18/EjerciciosPython10.git" target="_blank" class="btn-icon"><i
+                  class="fab fa-github"></i> Set 2</a>
+            </div>
+          </div>
+        </div>
+
       </div>
-    </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="script.js"></script>
-  </body>
+    </div>
+  </section>
+
+  <!-- Skills Hex Grid / Matrix -->
+  <section id="expertise" class="py-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">// Dev.Skills()</span>
+        <h2 class="section-title-main">Ecosistema Técnico</h2>
+      </div>
+
+      <div class="row g-4 justify-content-center skills-grid">
+        <div class="col-lg-3 col-md-4 col-sm-6 skill-grid-item">
+          <div class="glass-card tilt-card" style="padding:30px 20px;">
+            <div class="icon-box" style="color: #4B8BBE;"><i class="fab fa-python"></i></div>
+            <h4 class="mb-1" style="color:#fff;">Python</h4>
+            <span class="tech-tag">Backend & OOP</span>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 skill-grid-item">
+          <div class="glass-card tilt-card" style="padding:30px 20px;">
+            <div class="icon-box" style="color: #F7DF1E;"><i class="fab fa-js-square"></i></div>
+            <h4 class="mb-1" style="color:#fff;">JavaScript</h4>
+            <span class="tech-tag">ES6+ & Async</span>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 skill-grid-item">
+          <div class="glass-card tilt-card" style="padding:30px 20px;">
+            <div class="icon-box" style="color: #336791;"><i class="fas fa-database"></i></div>
+            <h4 class="mb-1" style="color:#fff;">Databases</h4>
+            <span class="tech-tag">SQL & MongoDB</span>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 skill-grid-item">
+          <div class="glass-card tilt-card" style="padding:30px 20px;">
+            <div class="icon-box" style="color: #0ea5e9;"><i class="fab fa-css3-alt"></i></div>
+            <h4 class="mb-1" style="color:#fff;">Visual UI</h4>
+            <span class="tech-tag">CSS Grid/Glassmorphism</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA / Contact -->
+  <section id="contact" class="pb-section">
+    <div class="container contact-wrapper">
+      <div class="glass-card contact-card tilt-card">
+        <span class="section-label text-center mb-2">// Network.Connect()</span>
+        <h2 class="mb-3" style="font-size: clamp(2rem, 3vw, 3rem); font-weight:800; color:#fff;">¿Construimos algo
+          masivo?</h2>
+        <p style="font-size: 1.1rem; color: #94a3b8; max-width: 500px; margin: 0 auto;">Estoy siempre abierto a
+          problemas arquitectónicos difíciles y colaboraciones en código limpio.</p>
+
+        <a href="mailto:monterrosamgcol@gmail.com" class="contact-email">
+          monterrosamgcol@gmail.com
+        </a>
+
+        <div class="social-bar">
+          <a href="https://github.com/monterrosag18" target="_blank" class="social-circle"><i
+              class="fab fa-github"></i></a>
+          <a href="https://linkedin.com/in/carlos-monterrosa" target="_blank" class="social-circle"><i
+              class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="expert-footer">
+    <div class="footer-glow"></div>
+    <div class="container">
+      <div class="navbar-brand mb-4 d-inline-block"
+        style="font-size: 1.2rem; font-weight: 800; color:#fff; letter-spacing: 2px;">
+        <i class="fas fa-terminal" style="color: var(--accent-cyan)"></i> MONTERROSA
+      </div>
+      <p>&copy; 2025 Carlos Monterrosa. Engineered with absolute precision.</p>
+    </div>
+  </footer>
+
+  <!-- 3D Tilt Library Script (Vanilla JS logic to follow in script.js) -->
+  <script src="script.js"></script>
+
+</body>
+
 </html>

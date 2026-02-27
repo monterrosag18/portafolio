@@ -1,556 +1,143 @@
-// Script de interactividad para el portafolio
-// Carlos Monterrosa - 2025
+/**
+ * Carlos Monterrosa - Premium Portfolio Interactions
+ * Engineered for maximum performance and visual impact.
+ */
 
-// Esperar a que el DOM esté completamente cargado
-document.addEventListener('DOMContentLoaded', function() {
-  
-  // ============================================
-  // 1. Mensaje de bienvenida
-  // ============================================
-  
-  // Mostrar un mensaje de bienvenida cuando carga la página
-  console.log('¡Bienvenido a mi portafolio! 🚀');
-  
-  // Mostrar mensaje después de 2 segundos
-  setTimeout(() => {
-    // Crear elemento de mensaje
-    const welcomeMessage = document.createElement('div');
-    welcomeMessage.id = 'welcome-toast';
-    welcomeMessage.innerHTML = `
-      <i class="fas fa-rocket"></i>
-      <span>¡Hola! Gracias por visitar mi portafolio</span>
-      <button id="close-toast" aria-label="Cerrar mensaje">&times;</button>
-    `;
-    welcomeMessage.style.cssText = `
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: linear-gradient(135deg, #1e40af, #d97706);
-      color: white;
-      padding: 15px 20px;
-      border-radius: 10px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      z-index: 9999;
-      animation: slideInRight 0.5s ease-out;
-      max-width: 350px;
-      font-size: 0.95rem;
-    `;
-    
-    document.body.appendChild(welcomeMessage);
-    
-    // Botón para cerrar el mensaje
-    const closeBtn = document.getElementById('close-toast');
-    closeBtn.style.cssText = `
-      background: rgba(255,255,255,0.2);
-      border: none;
-      color: white;
-      font-size: 1.5rem;
-      cursor: pointer;
-      width: 30px;
-      height: 30px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: background 0.3s ease;
-    `;
-    
-    closeBtn.addEventListener('click', () => {
-      welcomeMessage.style.animation = 'slideOutRight 0.3s ease-out';
-      setTimeout(() => welcomeMessage.remove(), 300);
-    });
-    
-    // Auto-cerrar después de 6 segundos
-    setTimeout(() => {
-      if (welcomeMessage && welcomeMessage.parentNode) {
-        welcomeMessage.style.animation = 'slideOutRight 0.3s ease-out';
-        setTimeout(() => welcomeMessage.remove(), 300);
-      }
-    }, 6000);
-    
-  }, 2000);
-  
-  
-  // ============================================
-  // 2. Cambiar texto de la sección Hero
-  // ============================================
-  
-  // Encontrar el párrafo de descripción en el hero
-  const heroDesc = document.querySelector('.hero-desc');
-  
-  if (heroDesc) {
-    // Guardar el texto original
-    const originalText = heroDesc.textContent;
-    
-    // Crear un botón para cambiar el texto
-    const changeTextBtn = document.createElement('button');
-    changeTextBtn.textContent = '¿Quieres saber más sobre mí?';
-    changeTextBtn.className = 'btn btn-outline-light btn-sm mt-3';
-    changeTextBtn.id = 'change-text-btn';
-    changeTextBtn.style.cssText = `
-      margin-top: 1rem;
-      animation: pulse 2s infinite;
-    `;
-    
-    // Insertar el botón después del párrafo
-    heroDesc.parentNode.insertBefore(changeTextBtn, heroDesc.nextSibling);
-    
-    let textChanged = false;
-    
-    changeTextBtn.addEventListener('click', () => {
-      if (!textChanged) {
-        // Texto alternativo más personal
-        heroDesc.innerHTML = `
-          Me apasiona resolver problemas complejos con código elegante. 
-          Actualmente estoy aprendiendo en Riwi, donde cada día es una nueva oportunidad para crecer.
-          Mi objetivo es convertirme en un desarrollador que no solo escribe código, sino que crea soluciones que impactan.
-          <br><br>
-          <em style="color: var(--secondary);">
-            "El código es poesía escrita en lógica" - Esa es mi filosofía
-          </em>
-        `;
-        changeTextBtn.textContent = '← Volver al texto original';
-        changeTextBtn.style.animation = 'none';
-        textChanged = true;
-      } else {
-        // Volver al texto original
-        heroDesc.textContent = originalText;
-        changeTextBtn.textContent = '¿Quieres saber más sobre mí?';
-        changeTextBtn.style.animation = 'pulse 2s infinite';
-        textChanged = false;
-      }
-    });
-  }
-  
-  
-  // ============================================
-  // 3. Contador de proyectos
-  // ============================================
-  
-  // Contar cuántos proyectos hay
-  const projectCards = document.querySelectorAll('.project-card');
-  const skillCards = document.querySelectorAll('.skill-card');
-  
-  if (projectCards.length > 0) {
-    console.log(`📊 Total de proyectos: ${projectCards.length}`);
-    console.log(`💡 Total de habilidades: ${skillCards.length}`);
-  }
-  
-  
-  // ============================================
-  // 4. Efecto de hover mejorado en tarjetas
-  // ============================================
-  
-  projectCards.forEach(card => {
-    card.addEventListener('mouseenter', function() {
-      // Agregar un efecto sutil al hacer hover
-      this.style.transform = 'translateY(-12px) scale(1.02)';
-    });
-    
-    card.addEventListener('mouseleave', function() {
-      this.style.transform = '';
-    });
-  });
-  
-  
-  // ============================================
-  // 5. Mostrar/Ocultar contenido extra
-  // ============================================
-  
-  // Buscar la sección de contacto
-  const contactSection = document.getElementById('contact');
-  
-  if (contactSection) {
-    // Crear un botón toggle
-    const toggleBtn = document.createElement('button');
-    toggleBtn.textContent = '💬 Ver más formas de contacto';
-    toggleBtn.className = 'btn btn-primary btn-sm mt-4';
-    toggleBtn.id = 'toggle-contact-btn';
-    
-    // Crear contenido oculto
-    const hiddenContent = document.createElement('div');
-    hiddenContent.id = 'extra-contact';
-    hiddenContent.style.cssText = `
-      display: none;
-      margin-top: 20px;
-      padding: 20px;
-      background: rgba(30, 64, 175, 0.1);
-      border-radius: 10px;
-      border: 1px solid rgba(30, 64, 175, 0.3);
-    `;
-    hiddenContent.innerHTML = `
-      <h4 style="color: var(--secondary); margin-bottom: 15px;">
-        <i class="fas fa-comments"></i> Otras formas de contacto
-      </h4>
-      <p style="color: var(--text-muted); margin-bottom: 10px;">
-        También puedes encontrarme en:
-      </p>
-      <ul style="color: var(--text-light); list-style: none; padding: 0;">
-        <li style="margin-bottom: 8px;">
-          <i class="fab fa-linkedin" style="color: var(--accent); width: 25px;"></i>
-          LinkedIn: aun en construcción
-        </li>
-        <li style="margin-bottom: 8px;">
-          <i class="fab fa-twitter" style="color: var(--accent); width: 25px;"></i>
-          Twitter: me falta
-        </li>
-        <li style="margin-bottom: 8px;">
-          <i class="fab fa-discord" style="color: var(--accent); width: 25px;"></i>
-          Discord: MONTERROSA
-        </li>
-      </ul>
-    `;
-    
-    // Insertar elementos
-    const container = contactSection.querySelector('.container-lg');
-    container.appendChild(toggleBtn);
-    container.appendChild(hiddenContent);
-    
-    // Función toggle
-    let isVisible = false;
-    toggleBtn.addEventListener('click', () => {
-      if (!isVisible) {
-        hiddenContent.style.display = 'block';
-        hiddenContent.style.animation = 'fadeInUp 0.5s ease-out';
-        toggleBtn.innerHTML = '👆 Ocultar contactos adicionales';
-        isVisible = true;
-      } else {
-        hiddenContent.style.display = 'none';
-        toggleBtn.innerHTML = '💬 Ver más formas de contacto';
-        isVisible = false;
-      }
-    });
-  }
-  
-  
-  // ============================================
-  // 6. Animaciones en scroll
-  // ============================================
-  
-  // Observador de intersección para animar elementos al hacer scroll
+document.addEventListener('DOMContentLoaded', () => {
+  initPremiumNav();
+  initRevealAnimations();
+  initTiltEffect();
+  initDynamicOrbs();
+});
+
+/**
+ * Transforms the NavBar on scroll for a glassmorphic docked effect
+ */
+function initPremiumNav() {
+  const navbar = document.getElementById('navbar');
+  if (!navbar) return;
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  }, { passive: true });
+}
+
+/**
+ * Staggered entrance animations using Intersection Observer
+ */
+function initRevealAnimations() {
   const observerOptions = {
     threshold: 0.1,
-    rootMargin: '0px 0px -100px 0px'
+    rootMargin: "0px 0px -50px 0px"
   };
-  
-  const observer = new IntersectionObserver(function(entries) {
+
+  const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.style.opacity = '1';
         entry.target.style.transform = 'translateY(0)';
+        observer.unobserve(entry.target);
       }
     });
   }, observerOptions);
-  
-  // Observar todas las tarjetas
-  document.querySelectorAll('.project-card, .skill-card').forEach(card => {
-    card.style.opacity = '0';
-    card.style.transform = 'translateY(30px)';
-    card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-    observer.observe(card);
-  });
-  
-  
-  // ============================================
-  // 7. Modo oscuro/claro toggle (bonus)
-  // ============================================
-  
-  // Crear botón de modo
-  const modeToggle = document.createElement('button');
-  modeToggle.innerHTML = '<i class="fas fa-moon"></i>';
-  modeToggle.id = 'mode-toggle';
-  modeToggle.setAttribute('aria-label', 'Cambiar tema');
-  modeToggle.style.cssText = `
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, var(--primary), var(--secondary));
-    border: none;
-    color: white;
-    font-size: 1.2rem;
-    cursor: pointer;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    z-index: 9998;
-    transition: transform 0.3s ease;
-  `;
-  
-  document.body.appendChild(modeToggle);
-  
-  modeToggle.addEventListener('mouseenter', () => {
-    modeToggle.style.transform = 'scale(1.1) rotate(15deg)';
-  });
-  
-  modeToggle.addEventListener('mouseleave', () => {
-    modeToggle.style.transform = 'scale(1) rotate(0deg)';
-  });
-  
-  // Funcionalidad del modo (simplificada)
-  let isDarkMode = true;
-  modeToggle.addEventListener('click', () => {
-    if (isDarkMode) {
-      document.body.style.filter = 'brightness(1.2) contrast(0.95)';
-      modeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-      isDarkMode = false;
-    } else {
-      document.body.style.filter = '';
-      modeToggle.innerHTML = '<i class="fas fa-moon"></i>';
-      isDarkMode = true;
-    }
-  });
-  
-  
-  // ============================================
-  // 8. Validación y envío del formulario de contacto
-  // ============================================
-  
-  const contactForm = document.getElementById('contactForm');
-  
-  if (contactForm) {
-    // Obtener elementos del formulario
-    const nameInput = document.getElementById('name');
-    const emailInput = document.getElementById('email');
-    const phoneInput = document.getElementById('phone');
-    const subjectSelect = document.getElementById('subject');
-    const messageTextarea = document.getElementById('message');
-    const submitBtn = contactForm.querySelector('.btn-submit');
-    const btnText = submitBtn.querySelector('.btn-text');
-    const btnLoading = submitBtn.querySelector('.btn-loading');
-    const formMessage = document.getElementById('formMessage');
-    
-    // Validación en tiempo real
-    const validateEmail = (email) => {
-      const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      return re.test(email);
-    };
-    
-    const validatePhone = (phone) => {
-      if (!phone) return true; // Opcional
-      const re = /^[\d\s\+\-\(\)]+$/;
-      return re.test(phone) && phone.replace(/\D/g, '').length >= 10;
-    };
-    
-    // Agregar validación visual en tiempo real
-    emailInput.addEventListener('blur', function() {
-      if (this.value && !validateEmail(this.value)) {
-        this.classList.add('is-invalid');
-        this.classList.remove('is-valid');
-      } else if (this.value) {
-        this.classList.add('is-valid');
-        this.classList.remove('is-invalid');
-      }
-    });
-    
-    phoneInput.addEventListener('blur', function() {
-      if (this.value && !validatePhone(this.value)) {
-        this.classList.add('is-invalid');
-        this.classList.remove('is-valid');
-      } else if (this.value) {
-        this.classList.add('is-valid');
-        this.classList.remove('is-invalid');
-      }
-    });
-    
-    messageTextarea.addEventListener('input', function() {
-      if (this.value.length < 10 && this.value.length > 0) {
-        this.classList.add('is-invalid');
-        this.classList.remove('is-valid');
-      } else if (this.value.length >= 10) {
-        this.classList.add('is-valid');
-        this.classList.remove('is-invalid');
-      }
-    });
-    
-    // Manejar envío del formulario
-    contactForm.addEventListener('submit', function(e) {
-      e.preventDefault();
-      
-      // Validar todos los campos
-      let isValid = true;
-      let errors = [];
-      
-      // Validar nombre
-      if (!nameInput.value.trim()) {
-        errors.push('El nombre es requerido');
-        nameInput.classList.add('is-invalid');
-        isValid = false;
-      } else {
-        nameInput.classList.remove('is-invalid');
-        nameInput.classList.add('is-valid');
-      }
-      
-      // Validar email
-      if (!emailInput.value.trim()) {
-        errors.push('El email es requerido');
-        emailInput.classList.add('is-invalid');
-        isValid = false;
-      } else if (!validateEmail(emailInput.value)) {
-        errors.push('Email inválido');
-        emailInput.classList.add('is-invalid');
-        isValid = false;
-      } else {
-        emailInput.classList.remove('is-invalid');
-        emailInput.classList.add('is-valid');
-      }
-      
-      // Validar teléfono (opcional)
-      if (phoneInput.value && !validatePhone(phoneInput.value)) {
-        errors.push('Teléfono inválido');
-        phoneInput.classList.add('is-invalid');
-        isValid = false;
-      }
-      
-      // Validar asunto
-      if (!subjectSelect.value) {
-        errors.push('Selecciona un asunto');
-        subjectSelect.classList.add('is-invalid');
-        isValid = false;
-      } else {
-        subjectSelect.classList.remove('is-invalid');
-        subjectSelect.classList.add('is-valid');
-      }
-      
-      // Validar mensaje
-      if (!messageTextarea.value.trim()) {
-        errors.push('El mensaje es requerido');
-        messageTextarea.classList.add('is-invalid');
-        isValid = false;
-      } else if (messageTextarea.value.trim().length < 10) {
-        errors.push('El mensaje debe tener al menos 10 caracteres');
-        messageTextarea.classList.add('is-invalid');
-        isValid = false;
-      } else {
-        messageTextarea.classList.remove('is-invalid');
-        messageTextarea.classList.add('is-valid');
-      }
-      
-      // Si hay errores, mostrarlos
-      if (!isValid) {
-        showMessage('Por favor, corrige los errores del formulario', 'error');
-        return;
-      }
-      
-      // Simular envío del formulario
-      submitBtn.disabled = true;
-      btnText.style.display = 'none';
-      btnLoading.style.display = 'inline-block';
-      
-      // Recopilar datos del formulario
-      const formData = {
-        name: nameInput.value.trim(),
-        email: emailInput.value.trim(),
-        phone: phoneInput.value.trim(),
-        subject: subjectSelect.value,
-        message: messageTextarea.value.trim(),
-        timestamp: new Date().toISOString()
-      };
-      
-      // Simular envío (en producción, aquí irías a un backend o servicio como EmailJS)
-      setTimeout(() => {
-        // Guardar en localStorage como backup
-        try {
-          const messages = JSON.parse(localStorage.getItem('contactMessages') || '[]');
-          messages.push(formData);
-          localStorage.setItem('contactMessages', JSON.stringify(messages));
-        } catch (e) {
-          console.error('Error al guardar mensaje:', e);
-        }
-        
-        // Mostrar mensaje de éxito
-        showMessage(
-          '¡Mensaje enviado con éxito! Te responderé lo antes posible a ' + formData.email,
-          'success'
-        );
-        
-        // Resetear formulario
-        contactForm.reset();
-        
-        // Limpiar clases de validación
-        contactForm.querySelectorAll('.is-valid, .is-invalid').forEach(el => {
-          el.classList.remove('is-valid', 'is-invalid');
-        });
-        
-        // Restaurar botón
-        submitBtn.disabled = false;
-        btnText.style.display = 'inline-block';
-        btnLoading.style.display = 'none';
-        
-        // Scroll suave al mensaje
-        formMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-        
-        // Log para desarrollo
-        console.log('📧 Mensaje recibido:', formData);
-        
-      }, 2000); // Simular delay de red
-    });
-    
-    // Función para mostrar mensajes
-    function showMessage(text, type) {
-      formMessage.textContent = text;
-      formMessage.className = 'form-message ' + type;
-      formMessage.style.display = 'block';
-      
-      // Auto-ocultar después de 8 segundos
-      setTimeout(() => {
-        formMessage.style.display = 'none';
-      }, 8000);
-    }
-    
-    console.log('📋 Formulario de contacto inicializado');
-  }
-  
-  
-  // ============================================
-  // 9. Log final
-  // ============================================
-  
-  console.log('✅ Script cargado correctamente');
-  console.log('🎨 Portafolio de Carlos Monterrosa');
-  console.log('📅 Año: 2025');
-  
-});
 
-// Agregar animaciones CSS necesarias
-const style = document.createElement('style');
-style.textContent = `
-  @keyframes slideInRight {
-    from {
-      transform: translateX(400px);
-      opacity: 0;
-    }
-    to {
-      transform: translateX(0);
-      opacity: 1;
-    }
+  // Select all sections and cards to fade in
+  const revealElements = document.querySelectorAll('.section-header, .glass-card, .project-category-title');
+
+  revealElements.forEach((el, index) => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(40px)';
+    el.style.transition = `all 0.8s cubic-bezier(0.16, 1, 0.3, 1) ${index % 4 * 0.15}s`;
+    observer.observe(el);
+  });
+}
+
+/**
+ * Advanced 3D Tilt Effect for Premium Cards
+ * Transforms mouse position into 3D rotations for a physical, metallic feel.
+ */
+function initTiltEffect() {
+  const cards = document.querySelectorAll('.tilt-card');
+
+  cards.forEach(card => {
+    card.addEventListener('mousemove', handleTilt);
+    card.addEventListener('mouseleave', resetTilt);
+  });
+
+  function handleTilt(e) {
+    const card = e.currentTarget;
+    const cardRect = card.getBoundingClientRect();
+
+    // Calculate mouse position relative to the card center
+    const x = e.clientX - cardRect.left;
+    const y = e.clientY - cardRect.top;
+
+    const centerX = cardRect.width / 2;
+    const centerY = cardRect.height / 2;
+
+    // Rotate values (max 10 degrees)
+    const rotateX = ((y - centerY) / centerY) * -8;
+    const rotateY = ((x - centerX) / centerX) * 8;
+
+    // Calculate dynamic glare/lighting based on mouse payload
+    const calculateGlare = (x / cardRect.width) * 100;
+
+    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+    card.style.transition = 'transform 0.1s ease-out';
+
+    // Add dynamic highlight to the border
+    card.style.borderTopColor = `rgba(255, 255, 255, ${calculateGlare / 300 + 0.1})`;
+    card.style.borderLeftColor = `rgba(255, 255, 255, ${(100 - calculateGlare) / 300 + 0.1})`;
   }
-  
-  @keyframes slideOutRight {
-    from {
-      transform: translateX(0);
-      opacity: 1;
-    }
-    to {
-      transform: translateX(400px);
-      opacity: 0;
-    }
+
+  function resetTilt(e) {
+    const card = e.currentTarget;
+    card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
+    card.style.transition = 'transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)';
+    card.style.borderTopColor = 'rgba(255, 255, 255, 0.15)';
+    card.style.borderLeftColor = 'rgba(255, 255, 255, 0.1)';
   }
-  
-  @keyframes pulse {
-    0%, 100% {
-      box-shadow: 0 0 0 0 rgba(30, 64, 175, 0.7);
+}
+
+/**
+ * Mild parallax on the background glowing orbs to give depth
+ */
+function initDynamicOrbs() {
+  const orbs = document.querySelectorAll('.ambient-orb');
+  if (!orbs.length) return;
+
+  window.addEventListener('mousemove', (e) => {
+    const mouseX = e.clientX / window.innerWidth - 0.5;
+    const mouseY = e.clientY / window.innerHeight - 0.5;
+
+    orbs.forEach((orb, index) => {
+      const depth = (index + 1) * 20; // different depth for each orb
+      const moveX = mouseX * depth;
+      const moveY = mouseY * depth;
+      orb.style.transform = `translate(${moveX}px, ${moveY}px)`;
+      orb.style.transition = 'transform 2s cubic-bezier(0.16, 1, 0.3, 1)';
+    });
+  });
+}
+
+// Ensure proper spacing when clicking anchor links due to sticky nav
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    const targetId = this.getAttribute('href');
+    if (targetId === '#') return;
+
+    const targetElement = document.querySelector(targetId);
+    if (targetElement) {
+      const top = targetElement.getBoundingClientRect().top + window.pageYOffset - 100; // 100px offset for nav
+      window.scrollTo({
+        top: top,
+        behavior: 'smooth'
+      });
     }
-    50% {
-      box-shadow: 0 0 0 10px rgba(30, 64, 175, 0);
-    }
-  }
-  
-  #close-toast:hover {
-    background: rgba(255,255,255,0.4) !important;
-  }
-`;
-document.head.appendChild(style);
+  });
+});
